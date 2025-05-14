@@ -1,0 +1,19 @@
+package queue;
+
+public class MyQueue {
+	
+	public static void main(String[] args) {
+		
+		IntQueue IQ=new IntQueue();
+		
+		IQ.insert(10);
+		IQ.insert(20);
+		IQ.insert(30);
+		
+		IQ.display();
+		
+		
+	}
+	
+
+}

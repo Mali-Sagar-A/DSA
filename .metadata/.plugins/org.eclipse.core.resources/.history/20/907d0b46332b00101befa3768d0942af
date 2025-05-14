@@ -1,0 +1,30 @@
+package Tree;
+
+public class BinarySearchTree {
+
+	private TreeNode root;
+
+	public BinarySearchTree() {
+		
+		root = null;
+	}
+	
+	public BinarySearchTree(TreeNode r) {
+	
+		root = r;
+	}
+
+	public TreeNode getRoot() {
+		return root;
+	}
+
+	public void setRoot(TreeNode root) {
+		this.root = root;
+	}
+	
+	public void Insert_NonRecursiv
+	
+	
+	
+	
+}

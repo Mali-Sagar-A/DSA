@@ -1,0 +1,35 @@
+package Tree;
+
+import java.util.Scanner;
+
+public class MyBinaryTree {
+	
+	public static void main(String[] args) {
+	Scanner s=new Scanner(System.in);
+	
+//	System.out.println("Enter Root Node Data..");
+//	
+//	int data=s.nextInt();
+//	
+//	TreeNode new_node = new TreeNode(data);
+//	BinaryTree bt= new BinaryTree(new_node);
+	BinaryTree bt= new BinaryTree();
+	
+	int ch;
+	
+	do {
+		System.out.println("binary Tree Operation");
+		
+		System.out.println("1.->PreOrder");
+		System.out.println("2.->InOrder");
+		System.out.println("3.->PostOrder");
+		System.out.println("11.->Display");
+		System.out.println("0.->Exit");
+		
+		
+	}
+	
+	
+	}
+
+}

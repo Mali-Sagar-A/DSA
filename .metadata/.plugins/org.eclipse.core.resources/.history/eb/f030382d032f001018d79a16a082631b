@@ -1,0 +1,89 @@
+package linkedList;
+
+public class ListNumberSum {
+	
+	private IntNode head;
+	
+	public ListNumberSum()
+	{
+		head=null;
+	}
+	
+	
+	
+	
+	public IntNode getHead() {
+		return head;
+	}
+
+
+
+
+	public void setHead(IntNode head) {
+		this.head = head;
+	}
+	
+	public static void sum(SingleLinkedList sll,SingleLinkedList sll2,SingleLinkedList sll3)
+	{
+		int num1=0;
+		int num2=0;
+		int sum=0;
+		int n=0;
+		
+		
+		
+		while(!sll.isEmpty())
+		{
+			n=sll.DeleteFirst();
+			num1=(num1*10)+n;
+			
+		}
+		
+		while(!sll2.isEmpty())
+		{
+			n=sll2.DeleteFirst();
+			num2=(num2*10)+n;
+			
+		}
+		
+		sum=num1+num2;
+		
+		while(sum!=0)
+		{
+			n=sum%10;
+			sll3.insertFirst(n);
+			sum=sum/10;
+		}
+		
+	
+	}
+	
+	public static void main(String[] args) {
+		SingleLinkedList sll = new SingleLinkedList();
+		SingleLinkedList sll2 = new SingleLinkedList();
+		SingleLinkedList sll3 = new SingleLinkedList();
+		
+		sll.insertFirst(1);
+		sll.insertFirst(2);
+		sll.insertFirst(3);
+		sll.insertFirst(4);
+		sll.Display();
+		
+		sll2.insertFirst(5);
+		sll2.insertFirst(6);
+		sll2.insertFirst(7);
+		sll2.insertFirst(8);
+		sll2.Display();
+		
+		
+		
+		ListNumberSum.sum(sll, sll2, sll3);
+		sll3.Display();
+		
+		sll.Display();
+		
+		
+		
+	}
+
+}

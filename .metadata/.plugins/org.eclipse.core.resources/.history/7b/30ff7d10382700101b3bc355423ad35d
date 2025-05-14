@@ -1,0 +1,32 @@
+package linkedList;
+
+
+public class SingleLinkedList {
+
+	private IntNode head;
+	
+	public SingleLinkedList()
+	{
+		head=null;
+	}
+	
+	
+	public void insertFirst(int d)
+	{
+		IntNode new_node=new IntNode(d);
+		
+		if(head==null)
+		{
+			head=new_node;
+			return;
+		}
+		else
+		{
+			new_node.setNext(head);
+			head = new_node;
+			return;
+		}
+		
+	}
+	
+}

@@ -1,0 +1,123 @@
+package Tree;
+
+public class BinarySearchTree {
+
+	private TreeNode root;
+
+	public BinarySearchTree() {
+		
+		root = null;
+	}
+	
+	public BinarySearchTree(TreeNode r) {
+	
+		root = r;
+	}
+
+	public TreeNode getRoot() {
+		return root;
+	}
+
+	public void setRoot(TreeNode root) {
+		this.root = root;
+	}
+	
+	public void Insert_NonRecursive(int d)
+	{
+		TreeNode new_node = new TreeNode(d);
+		
+		if(root==null)
+		{
+			root=new_node;
+			return;
+		}
+		
+		TreeNode iter=root;
+		
+		while(true)
+		{
+			if(d<iter.getData())
+			{
+				if(iter.getLeft()==null)
+				{
+					iter.setLeft(new_node);
+					return ;
+				}
+				else
+				{
+					iter=iter.getLeft();
+				}
+			}
+			else if(d>iter.getData())
+			{
+				if(iter.getRight()==null)
+				{
+					iter.setRight(new_node);
+					return;
+				}
+				else
+				{
+					iter=iter.getRight();
+				}
+			}
+			else
+			{
+				System.out.println("Duplicate value can't be inserted...");
+				return;
+			}
+		}
+	}
+	
+	
+	
+	
+	public void Insert_Recursive(int d)
+	{
+		TreeNode new_node = new TreeNode(d);
+		
+		if(root==null)
+		{
+			root=new_node;
+			return;
+		}
+		
+		TreeNode iter=root;
+		
+		while(true)
+		{
+			if(d<iter.getData())
+			{
+				if(iter.getLeft()==null)
+				{
+					iter.setLeft(new_node);
+					return ;
+				}
+				else
+				{
+					iter=iter.getLeft();
+				}
+			}
+			else if(d>iter.getData())
+			{
+				if(iter.getRight()==null)
+				{
+					iter.setRight(new_node);
+					return;
+				}
+				else
+				{
+					iter=iter.getRight();
+				}
+			}
+			else
+			{
+				System.out.println("Duplicate value can't be inserted...");
+				return;
+			}
+		}
+	}
+	
+	
+	
+	
+}

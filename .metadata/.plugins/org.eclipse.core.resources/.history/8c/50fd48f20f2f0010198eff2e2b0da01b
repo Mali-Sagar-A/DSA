@@ -1,0 +1,101 @@
+package linkedList;
+
+public class ListNumberSum {
+	
+	
+	public static void sum(SingleLinkedList sll3,SingleLinkedList sll,SingleLinkedList sll2)
+	{
+		int num1=0;
+		int num2=0;
+		int sum=0;
+		int n=0;
+		
+		IntNode iter=sll.getHead();
+		IntNode iter2=sll2.getHead();
+		
+		while(iter!=null)
+		{
+			n=iter.getData();
+			num1=(num1*10)+n;
+			iter=iter.getNext();	
+		}
+		
+		while(iter2!=null)
+		{
+			n=iter2.getData();
+			num2=(num2*10)+n;
+			iter2=iter2.getNext();	
+		}
+		
+		sum=num1+num2;
+		
+		while(sum!=0)
+		{
+			n=sum%10;
+			sll3.insertFirst(n);
+			sum=sum/10;
+		}
+		
+		
+		
+	}
+	
+	public static void slpit(SingleLinkedList sll,int d)
+	{
+		SingleLinkedList sll4 = new SingleLinkedList();
+		SingleLinkedList sll5 = new SingleLinkedList();
+		IntNode iter=sll.getHead();
+		int n=0;
+		while(iter.getData()!=d)
+		{
+			n=iter.getData();
+			sll4.insertFirst(n);
+			iter=iter.getNext();
+		}
+		
+		if(iter.getData()==d)
+		{
+			n=iter.getData();
+			sll5.insertFirst(n);
+			iter.getNext();
+		}
+		
+		sll4.Display();
+		sll5.Display();
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		SingleLinkedList sll = new SingleLinkedList();
+		SingleLinkedList sll2 = new SingleLinkedList();
+		SingleLinkedList sll3 = new SingleLinkedList();
+		
+		
+		
+		sll.insertFirst(1);
+		sll.insertFirst(2);
+		sll.insertFirst(3);
+		sll.insertFirst(4);
+		sll.Display();
+		
+		sll2.insertFirst(5);
+		sll2.insertFirst(6);
+		sll2.insertFirst(7);
+		sll2.insertFirst(8);
+		sll2.Display();
+		
+		
+		
+		ListNumberSum.sum(sll3,sll, sll2);
+		sll3.Display();
+		
+		sll.Display();
+		
+		
+		ListNumberSum.slpit(sll, 2);
+		
+		
+	}
+
+}

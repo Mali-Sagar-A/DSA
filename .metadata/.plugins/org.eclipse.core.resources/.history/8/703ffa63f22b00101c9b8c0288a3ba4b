@@ -1,0 +1,91 @@
+package Sorting;
+
+import java.util.Scanner;
+import java.util.Vector;
+
+public class MySorting {
+	
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		
+		SortingAlgorithm sa= new SortingAlgorithm();
+		
+		//Vector<Integer> arr=new Vector<Integer>();
+		int ch;
+		do {
+			
+			System.out.println("Sorting Algorithm......");
+			System.out.println("1.-> Bubble Sort");
+			System.out.println("2.-> Selection_Sort ");
+			System.out.println("3.-> Insertion_sort ");
+			System.out.println("0._> Exit");
+			
+			
+			System.err.println("Enter Your Choice");
+			ch = s.nextInt();
+			
+			switch(ch)
+			{
+				case 1:
+				{
+					System.out.println("********************************************");
+					int arr[]= {11,5,20,30,32,21,23,40,35,2,3,7,32,25,27};
+					sa.bubble_sort(arr);
+					System.out.println("bubble_sort");
+					sa.Display(arr);
+					System.out.println("\n******************************************");
+					break;
+				}
+				case 2:
+				{
+					System.out.println("********************************************");
+					int arr[]= {11,5,20,30,32,21,23,40,35,2,3,7,32,25,27};
+					sa.Selection_Sort(arr);
+					System.out.println("Selection_Sort");
+					sa.Display(arr);
+					System.out.println("\n******************************************");
+					break;
+				}
+				case 3:
+				{
+					System.out.println("********************************************");
+					int arr[]= {11,5,20,30,32,21,23,40,35,2,3,7,32,25,27};
+					sa.Insertion_sort(arr);;
+					System.out.println("Insertion_sort");
+					sa.Display(arr);
+					System.out.println("\n******************************************");
+					break;
+				}
+				case 4:
+				{
+					System.out.println("********************************************");
+					int arr[]= {11,5,20,30,32,21,23,40,35,2,3,7,32,25,27};
+					int arr2[]= {1,4,6,29,31,19,18,37,34,14,33,71,12,45,37};
+					
+					int []res=new int[arr.length+arr.length];
+					
+					sa.merge_Version1(arr, arr2, res);
+					System.out.println("Insertion_sort");
+					sa.Display(arr);
+					System.out.println("\n******************************************");
+					break;
+				}
+				case 0:
+				{
+					System.out.println("********************************************");
+					
+					
+					System.out.println("Thank you.......,,");
+					
+					System.out.println("\n******************************************");
+				}
+				default:
+				{
+					System.out.println("Enter Valid Choice");
+				}
+			}
+			
+		}while(ch!= 0);
+	}
+
+}

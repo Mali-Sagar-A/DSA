@@ -1,0 +1,48 @@
+package linkedList;
+
+
+public class SingleLinkedList {
+
+	private IntNode head;
+	
+	public SingleLinkedList()
+	{
+		head=null;
+	}
+	
+	
+	public void insertFirst(int d)
+	{
+		IntNode new_node=new IntNode(d);
+		
+		if(head==null)
+		{
+			head=new_node;
+			return;
+		}
+		else
+		{
+			new_node.setNext(head);
+			head = new_node;
+			return;
+		}
+		
+	}
+	
+	public int DeleteFirst()
+	{
+		int d=-999;
+		if(head==null)
+		{
+			System.out.println("Singly List Is Empty");
+			return d;
+		}
+		
+		else {
+		d=head.getData();
+		head=head.getNext();
+		return d;
+		}
+	}
+	
+}

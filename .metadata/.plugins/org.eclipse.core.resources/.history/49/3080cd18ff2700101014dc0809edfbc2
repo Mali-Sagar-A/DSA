@@ -1,0 +1,287 @@
+package linkedList;
+
+
+public class SingleLinkedList {
+
+	private IntNode head;
+	
+	public SingleLinkedList()
+	{
+		head=null;
+	}
+	
+	
+	public void insertFirst(int d)
+	{
+		IntNode new_node=new IntNode(d);
+		
+		if(head==null)
+		{
+			head=new_node;
+			return;
+		}
+		else
+		{
+			new_node.setNext(head);
+			head = new_node;
+			return;
+		}
+		
+	}
+	
+	public void insertLast(int d)
+	{
+		IntNode new_node=new IntNode(d);
+		if(head==null)
+		{
+			head=new_node;
+			return;
+		}
+		
+		IntNode iter=head;
+		
+		while(iter.getNext()!=null)
+		{
+			iter=iter.getNext();
+		}
+		
+		iter.setNext(new_node);
+		return;
+	}
+	
+	public int DeleteFirst()
+	{
+		int d=-999;
+		if(head==null)
+		{
+			System.out.println("Singly List Is Empty");
+			return d;
+		}
+		
+		else {
+		d=head.getData();
+		head=head.getNext();
+		return d;
+		}
+	}
+	
+	public int DeleteLast()
+	{
+		int d=-999;
+		if(head==null)
+		{
+			System.out.println("Singely List is empty..");
+			return d;
+		}
+		
+		if(head.getNext()==null)
+		{
+			d=head.getData();
+			head=null;
+			return d;
+		}
+		
+		IntNode iter= head;
+		
+		while(iter.getNext().getNext()!=null)
+		{
+			iter=iter.getNext();
+			
+		}
+		
+		d=iter.getNext().getData();
+		IntNode deletable = iter.getNext();
+		iter.setNext(null);
+		deletable = null;
+		return d;
+	}
+	
+	public void Insert_By_Pos(int d,int pos)
+	{
+		IntNode new_node=new IntNode(d);
+		
+		if(head==null)
+		{
+			head=new_node;
+			return ;
+		}
+		
+		if(pos==1)
+		{
+			new_node.setNext(head);
+			head=new_node;
+			return ;
+		}
+		
+		IntNode iter=head;
+		int i;
+		for(i=1;i<(pos-1)&&(iter.getNext()!=null);i++)
+		{
+			iter=iter.getNext();
+		}
+		
+		new_node.setNext(iter.getNext());
+		iter.setNext(new_node);
+		return;
+	}
+	
+	public int Delete_By_pos(int pos)
+	{
+		int d=-999;
+		if(head==null)
+		{
+			System.out.println("Singely Linked List is Empty");
+			return d;
+		}
+		if(pos==1)
+		{
+			d=head.getData();
+			head=head.getNext();
+			return d;
+		}
+		IntNode iter=head;
+		int i;
+		
+		for(i=1;i<(pos-1)&&(iter.getNext()!=null);i++)
+		{
+			iter=iter.getNext();
+		}
+		if(iter.getNext()!=null)
+		{
+			d=iter.getNext().getData();
+			iter.setNext(iter.getNext().getNext());
+		}
+		return d;
+	}
+	
+	public void Insert_before(int d,int key)
+	{
+		IntNode new_node = new IntNode(d);
+		
+		if(head==null)
+		{
+			head=new_node;
+			return;
+		}
+		if(head.getData()==key)
+		{
+			new_node.setNext(head);
+			head=new_node;
+			return;
+		}
+		IntNode iter=head;
+		while((iter.getNext()!=null)&&(iter.getNext().getData()!=key))
+		{
+			iter=iter.getNext();
+		}
+		if(iter.getNext()==null)
+		{
+			System.out.println("Invalid Key Insert Not Possible..");
+			return ;
+		}
+		new_node.setNext(iter.getNext());
+		iter.setNext(new_node);
+	}
+	
+	public void Insert_after(int d,int key)
+	{
+		IntNode new_node=new IntNode(d);
+		
+		if(head==null)
+		{
+			head=new_node;
+			return ;
+		}
+		IntNode iter=head;
+		while((iter!=null) && (iter.getData()!=key))
+		{
+			iter=iter.getNext();
+		}
+		if(iter.getNext()==null)
+		{
+			System.out.println("Invalid Key Inset Is not Possable..");
+			return;
+		}
+		new_node.setNext(iter.getNext());
+		iter.setNext(new_node);
+	}
+	
+	public void deleteBefore(int key) {
+	    if (head == null || head.getNext() == null || head.getData() == key) {
+	        System.out.println("Deletion not possible.");
+	        return;
+	    }
+
+	    IntNode prevPrev = null;
+	    IntNode prev = head;
+	    IntNode current = head.getNext();
+
+	    while (current != null && current.getData() != key) {
+	        prevPrev = prev;
+	        prev = current;
+	        current = current.getNext();
+	    }
+
+	    if (current == null) {
+	        System.out.println("Key not found.");
+	        return;
+	    }
+
+	    if (prevPrev == null) {
+	        // Delete the head
+	        head = head.getNext();
+	    } else {
+	        prevPrev.setNext(current);
+	    }
+
+	    System.out.println("Node before " + key + " deleted.");
+	}
+
+	
+	public int Delete_after(int key)
+	{
+		int d=-999;
+		
+		IntNode iter=head;
+		while(iter.getData()!=key)
+		{
+			iter=iter.getNext();
+		}
+		
+		if(iter.getNext()==null)
+		{
+			System.out.println("Sorry there are no node after key to delete...");
+			
+			return d;
+		}
+		else
+		{
+			d = iter.getNext().getData();
+			iter.setNext(iter.getNext().getNext());
+			
+			return d;
+		}
+		
+	}
+	
+	public void Display()
+	{
+		if(head==null)
+		{
+			System.out.println("Linked List Is Empty");
+			return ;
+		}
+		IntNode iter=head;
+		System.out.println("List==> ");
+		while(iter!=null)
+		{
+			System.out.print(iter.getData()+" ->");
+			iter=iter.getNext();
+		}
+	}
+	
+	
+	
+	
+	
+}

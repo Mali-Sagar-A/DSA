@@ -1,0 +1,73 @@
+package Sorting;
+
+public class SortingAlgorithm {
+
+	public void bubble_sort(int arr[])
+	{
+		
+		int i,j,temp;
+		
+		for(i=arr.length-1;i>=0;i--)
+		{
+			for(j=0;j<=i-1;j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+					temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+		
+	}
+	
+	public void Selection_Sort(int arr[])
+	{
+		int i,j,temp,min;
+		
+		for(i=0;i<arr.length;i++)
+		{
+			min=i;
+			for(j=i+1;j<arr.length;j++)
+			{
+				if(arr[j]<arr[min])
+				{
+					min=j;
+				}
+			}
+			
+			if(min!=i)
+			{
+				temp=arr[i];
+				arr[i]=arr[min];
+				arr[min]=temp;
+			}
+			
+					
+		}
+	}
+	
+	public void Insertion_sort(int arr[])
+	{
+		int i,j,k;
+		
+		for(i=1;i<arr.length-1;i++)
+		{
+			k=arr[i];
+			for(j=i-1;j>=0 && k<arr[j];i--)
+			{
+				arr[j+1]=arr[j];
+			}
+			arr[j+1]=k;
+		}
+	}
+	
+	public void Display(int arr[])
+	{
+		for(int i:arr)
+		{
+			System.out.print(i+" ");
+		}
+	}
+}

@@ -1,0 +1,22 @@
+package Hashing;
+
+import java.util.Scanner;
+
+public class HashMain {
+	
+	public static void main(String[] args) {
+		
+		MyHash mh=new MyHash();
+		
+		Scanner s= new Scanner(System.in);
+		
+		do {
+			
+			System.out.println("Hashing Operation");
+			System.out.println("1.-> InsertRecord");
+			System.out.println("11.-> Display");
+			System.out.println("0.->Exit");
+			
+		}while(ch!=0);
+	}
+}

@@ -1,0 +1,29 @@
+package linkedList;
+
+import java.util.LinkedList;
+
+public class Concatlist {
+	
+	
+	public static void display()
+	{
+		
+		
+	}
+
+	public static void main(String[] args) {
+		SingleLinkedList l1=new SingleLinkedList();
+		SingleLinkedList l2=new SingleLinkedList();
+		
+		l1.insertFirst(1);
+		l1.insertFirst(2);
+		
+		l1.insertFirst(3);
+		l1.insertFirst(4);
+		l1.insertFirst(5);
+		
+		l1.Display();
+	
+		
+	}
+}

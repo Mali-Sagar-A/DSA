@@ -1,0 +1,20 @@
+package linkedList;
+
+
+public class SingleLinkedList {
+
+	private IntNode head;
+	
+	public SingleLinkedList()
+	{
+		head=null;
+	}
+	
+	
+	public void insertFirst(int d)
+	{
+		IntNode new_node=new IntNode(d);
+		
+	}
+	
+}

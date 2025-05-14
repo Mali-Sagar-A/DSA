@@ -1,0 +1,95 @@
+package Recursion;
+
+public class Digit {
+	
+	public static int CountDig(int n)
+	{
+		if(n/10==0)
+		{
+			return 1;
+		}
+		
+		return 1 +CountDig(n/10);
+		
+	}
+	
+	public static int SumOfDigit(int n)
+	{
+		if(n/10==0)
+		{
+			return n;
+		}
+		
+		return n%10 +SumOfDigit(n/10);
+		
+	}
+	
+	public static void ReverseNumber(int n)
+	{
+		if(n/10==0)
+		{
+			System.out.println(n);
+			return ;
+			
+		}
+		System.out.print(n%10);
+		ReverseNumber(n/10);
+		return ;
+		
+	}
+	
+	public static int PowerNumber(int n,int p)
+	{
+		if(p==0)
+		{
+			return n;
+		}
+		
+		return n*PowerNumber(n,p-1);
+		
+	}
+	
+	public static void Odd(int n)
+	{
+		System.out.println(n);
+		if(n>25)
+		{
+			return;
+		}
+		System.out.println("Odd ->"+n);
+		Even(n+1);
+	}
+	
+	public static void Even(int n)
+	{
+		System.out.println("Even ->"+n);
+		Odd(n+1);
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		int cd=Digit.CountDig(1234567);
+		
+		System.out.println("Count of Digit is-> "+cd);
+		
+		int sd=Digit.SumOfDigit(852852);
+
+		System.out.println("sum of Digit is-> "+sd);
+		
+		System.out.print("Reverse of number is-> ");
+		
+		 Digit.ReverseNumber(1234567);
+		 
+		 int pn=Digit.PowerNumber(2, 5);
+
+			System.out.println("sum of Digit is-> "+pn);
+			
+			System.out.println();
+			
+			
+		 
+
+		
+	}
+}

@@ -1,0 +1,105 @@
+package queue;
+
+import stack.Student;
+
+public class StudentQueue {
+	private Student arr[];
+	private int front,rear;
+	
+	public StudentQueue()
+	{
+		arr= new Student[10];
+		front=-1;
+		rear=-1;
+		
+	}
+	
+	public StudentQueue(int d)
+	{
+		arr=new Student[d];
+		front=-1;
+		rear=-1;
+		
+	}
+	
+	public boolean isFull()
+	{
+		if(rear==arr.length-1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public boolean isEmpty()
+	{
+		if(front==-1 || front-rear==1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public void insert(Student d)
+	{
+		if(isFull())
+		{
+			System.out.println("Queue is Full");
+			return;
+		}
+		else
+		{
+			if(front==-1)
+			{
+				front=0;
+			}
+			
+			rear=rear+1;
+			arr[rear]=d;
+			return;
+		}
+	}
+	
+	public Student remove()
+	{
+		Student d=new Student();
+		
+		if(front==-1 || front-rear==1)
+		{
+			System.out.println("Queue is empty..");
+			return d;
+		}
+		else
+		{
+			d=arr[front];
+			front=front+1;
+			return d;
+			
+		}
+		
+		
+	}
+	
+	public void display()
+	{
+		if(isEmpty())
+		{
+			System.out.println("Empty Queue");
+			
+		}
+		else
+		{
+			for(int i=front; i<=rear ;i++)
+			{
+				System.out.print(arr[i]+"  ");
+			}
+		}
+	}
+
+}

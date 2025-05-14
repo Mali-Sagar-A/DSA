@@ -1,0 +1,29 @@
+package linkedList;
+
+public class ListNumberSum {
+	
+	public void sum()
+	{
+		
+	}
+	
+	public static void main(String[] args) {
+		SingleLinkedList sll = new SingleLinkedList();
+		SingleLinkedList sll2 = new SingleLinkedList();
+		
+		sll.insertFirst(1);
+		sll.insertFirst(2);
+		sll.insertFirst(3);
+		sll.insertFirst(4);
+		sll.Display();
+		
+		sll2.insertFirst(5);
+		sll2.insertFirst(6);
+		sll2.insertFirst(7);
+		sll2.insertFirst(8);
+		sll2.Display();
+		
+		
+	}
+
+}

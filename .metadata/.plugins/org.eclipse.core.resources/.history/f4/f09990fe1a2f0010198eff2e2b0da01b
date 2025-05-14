@@ -1,0 +1,34 @@
+package LinkedListStudent;
+
+public class StudentList {
+	
+	private Student head;
+
+	public StudentList() {
+		head=null;
+	}
+
+	public Student getHead() {
+		return head;
+	}
+
+	public void setHead(Student head) {
+		this.head = head;
+	}
+	
+	public void InsertFirst(int rno,String nm,int mks)
+	{
+		Student new_node=new Student(rno,nm,mks);
+		
+		if(head==null)
+		{
+			head=new_node;
+			return;
+		}
+		
+		
+	}
+	
+	
+
+}

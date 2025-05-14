@@ -1,0 +1,42 @@
+package Recursion;
+
+public class DisplayArry {
+	
+	public void DisplayBackward(int a[],int i)
+	{
+		if(i>9)
+		{
+			return;
+		}
+		
+		DisplayBackward(a,i+1);
+		System.out.println(a[i]+" "); 
+		
+		
+		
+	}
+
+	public void DisplayForward(int a[],int i)
+	{
+		if(i>9)
+		{
+			return;
+		}
+		
+		
+		System.out.println(a[i]+" "); 
+		DisplayForward(a,i+1);
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		int arr[]= {10,20,30,40,50,60,70,80,90,100};
+		
+		DisplayArry da=new DisplayArry();
+		
+		da.DisplayForward(arr, 0);
+		da.DisplayBackward(arr, 0);
+	}
+}

@@ -1,0 +1,16 @@
+package Recursion;
+
+import linkedList.IntNode;
+
+public class List {
+	public static void Display(IntNode iter)
+	{
+		if(iter==null) 
+		{
+			return;
+		}
+		Display(iter.getNext());
+		System.out.println(iter.getData());
+	}
+
+}

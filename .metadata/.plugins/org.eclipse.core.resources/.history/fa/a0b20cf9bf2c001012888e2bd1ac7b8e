@@ -1,0 +1,34 @@
+package Hashing;
+
+public class MyHash {
+	private Record_Info table[];
+	
+	private int i,loc;
+	
+	
+	public MyHash()
+	{
+		table=new Record_Info[100];
+		
+		for(int i=0;i<100;i++)
+		{
+			table[i].status = Record_Info.Record_type.EMPTY;
+		}
+	}
+	
+	public MyHash(int s)
+	{
+		table=new Record_Info[s];
+		
+		for(int i=0;i<100;i++)
+		{
+			table[i].status = Record_Info.Record_type.EMPTY;
+		}
+	}
+	
+	public int Hash(int rno)
+	{
+		return rno %100;
+	}
+	
+}

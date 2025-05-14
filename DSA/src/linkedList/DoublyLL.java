@@ -1,0 +1,83 @@
+package linkedList;
+
+public class DoublyLL {
+	private DoublyLLNode head;
+
+	public DoublyLLNode getHead() {
+		return head;
+	}
+
+	public void setHead(DoublyLLNode head) {
+		this.head = head;
+	}
+	
+	public void InsertFirst(int d)
+	{
+		DoublyLLNode new_node=new DoublyLLNode(d);
+		
+		if(head==null)
+		{
+			head=new_node;
+			return;
+		}
+		new_node.setNext(head);
+		head.setPrev(new_node);
+		head=new_node;
+		return;
+	}
+	public void InsertLast(int d)
+	{
+		DoublyLLNode new_node=new DoublyLLNode(d);
+		
+		if(head==null)
+		{
+			head=new_node;
+			return;
+		}
+		DoublyLLNode iter=head;
+		
+		while(iter.getNext()!=null)
+		{
+			iter=iter.getNext();
+		}
+		new_node.setPrev(iter);
+		iter.setNext(new_node);
+		return;
+	}
+	public int DeleteFirst()
+	{
+		int d=-999;
+		if(head==null)
+		{
+			System.out.println("Linked List is empty...");
+			return d;
+		}
+		d=head.getData();
+		head.getNext().setPrev(null);
+		head=head.getNext();
+		
+		
+		
+		
+		
+		
+		return d;
+	}
+	
+	public void Display()
+	{
+		if(head==null)
+		{
+			System.out.println("List is empty");
+			
+		}
+		DoublyLLNode iter=head;
+		while(iter!=null)
+		{
+			System.out.print(iter.getData()+" ");
+			iter=iter.getNext();
+			
+		}
+		
+	}
+}

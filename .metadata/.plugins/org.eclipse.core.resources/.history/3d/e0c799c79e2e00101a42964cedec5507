@@ -1,0 +1,86 @@
+package Sorting;
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    
+    public static int partation(int arr[],int low,int high)
+    {
+        int pivot,right,left,t;
+        
+        pivot=arr[low];
+        left=low;
+        right=high;
+        
+        while(left<right)
+        {
+            while(arr[left]<=pivot && left<right)
+            {
+                left++;
+            }
+            while(arr[right]>pivot)
+            {
+                right--;
+            }
+            
+            if(left<right)
+            {
+                t=arr[right];
+                arr[right]=arr[left];
+                arr[left]=t;
+                right--;
+                left++;
+            }
+            else
+            {
+                left++;
+            }
+        }
+        
+        arr[low]=arr[right];
+        arr[right]=pivot;
+        
+        return right;
+    }
+    
+    public static void QuickSort(int arr[],int low,int high)
+    {
+        int pivloc;
+        
+        if(low>=high)
+        {
+            return;
+        }
+        
+        pivloc=partation(arr,low,high);
+        
+        QuickSort(arr,low,pivloc-1);
+        
+        QuickSort(arr,pivloc+1,high);
+    }
+    
+    public static void display(int arr[])
+    {
+        for(int i:arr)
+        {
+            System.out.print(i+"  ");
+        }
+        
+    }
+    
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int arr[]={48,44,19,59,72,80,42,65,82,8,95,68};
+		
+		int low=0;
+		int high=11;
+		
+		Codechef.QuickSort(arr,low,high);
+		Codechef.display(arr);
+		
+
+	}
+}

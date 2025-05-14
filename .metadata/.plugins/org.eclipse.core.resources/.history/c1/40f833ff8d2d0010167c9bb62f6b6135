@@ -1,0 +1,24 @@
+package Graph;
+
+import java.util.Scanner;
+
+public class GraphTraversal {
+
+	public static void main(String[] args) {
+		BFS_Traversal BF = new BFS_Traversal(9);
+		DFS_Traversal DF = new DFS_Traversal(12);
+		
+		int ch;
+		Scanner s = new Scanner(System.in);
+		
+		do {
+			
+			
+			
+			System.out.println("Enter Your Choice.....");
+			ch=s.nextInt();
+			
+			System.out.println("");
+		}while(ch !=0);
+	}
+}

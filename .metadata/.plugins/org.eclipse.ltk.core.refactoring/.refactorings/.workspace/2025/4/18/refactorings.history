@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;java_dsa&apos; to &apos;DSA&apos;&#x0D;&#x0A;- Original element: &apos;java_dsa&apos;&#x0D;&#x0A;- Renamed element: &apos;java_dsa&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;java_dsa&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=java_dsa" name="DSA" references="true" stamp="1746003720091" version="1.0"/>
+</session>

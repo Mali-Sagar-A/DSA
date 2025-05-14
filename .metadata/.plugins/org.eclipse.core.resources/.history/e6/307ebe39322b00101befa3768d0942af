@@ -1,0 +1,15 @@
+package Tree;
+
+public class BinarySearchTree {
+
+	private TreeNode root;
+
+	public BinarySearchTree(TreeNode r) {
+		super();
+		root = r;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,26 @@
+package queue;
+
+import java.util.Scanner;
+
+public class MyQueue {
+	
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		IntQueue IQ=new IntQueue();
+		int ch;
+	
+		do {
+			
+			System.out.println("Student Queue");
+			
+			
+			
+			System.out.println("enter Your Choice");
+			ch=s.nextInt();
+		}while(ch!=0);
+		
+		
+	}
+	
+
+}

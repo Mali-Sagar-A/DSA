@@ -1,0 +1,42 @@
+package LinkedListStudent;
+
+import java.util.Scanner;
+
+public class MyStudent {
+	
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		StudentList sl=new StudentList();
+		int ch;
+		do {
+			System.out.println("student Linked operation");
+			
+			
+			
+			System.out.println("Enter your choice");
+			ch=s.nextInt();
+			
+			switch(ch)
+			{
+				case 1:
+				{
+					System.out.println("Enter Student RollNo");
+					int rno=s.nextInt();
+					System.out.println("Enter Student Name");
+					String nm=s.next();
+					System.out.println("Enter Marks");
+					int mks=s.nextInt();
+					
+					
+					sl.InsertFirst(rno, nm, mks);
+				}
+				case 2:
+				{
+					
+				}
+			}
+			
+		}while(ch!=0);
+	}
+
+}

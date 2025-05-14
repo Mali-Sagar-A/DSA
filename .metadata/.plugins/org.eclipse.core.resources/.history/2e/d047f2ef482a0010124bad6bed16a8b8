@@ -1,0 +1,21 @@
+package Recursion;
+
+public class Digit {
+	
+	public static int CountDig(int n)
+	{
+		if(n/10==0)
+		{
+			return 1;
+		}
+		
+		return 1+CountDig(n/10);
+		
+	}
+	
+	
+	public static void main(String[] args) {
+	
+		
+	}
+}

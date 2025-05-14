@@ -1,0 +1,44 @@
+package TreeMir;
+
+public class TreeNode {
+	private int data;
+	private int left,right;
+	public TreeNode() {
+		data=0;
+		left=right=null;
+	}
+	
+	public TreeNode(int d) {
+		data=d;
+		left=right=null;
+	}
+
+	public int getData() {
+		return data;
+	}
+
+	public void setData(int data) {
+		this.data = data;
+	}
+
+	public int getLeft() {
+		return left;
+	}
+
+	public void setLeft(int left) {
+		this.left = left;
+	}
+
+	public int getRight() {
+		return right;
+	}
+
+	public void setRight(int right) {
+		this.right = right;
+	}
+	
+	
+	
+	
+
+}

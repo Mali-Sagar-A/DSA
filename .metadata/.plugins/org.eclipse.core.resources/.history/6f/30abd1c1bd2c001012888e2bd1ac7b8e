@@ -1,0 +1,21 @@
+package Hashing;
+
+import stack.Student;
+
+public class Record_Info {
+	
+	private enum Record_type{EMPTY,OCCUPIED,DELETED}
+	private  Record_type status;
+	private Student ref;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

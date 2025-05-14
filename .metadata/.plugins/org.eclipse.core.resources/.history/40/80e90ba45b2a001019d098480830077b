@@ -1,0 +1,31 @@
+package Recursion;
+
+
+import linkedList.IntNode;
+import linkedList.SingleLinkedList;
+
+public class List {
+	public static void Display(IntNode iter)
+	{
+		if(iter==null) 
+		{
+			return;
+		}
+		Display(iter.getNext());
+		System.out.print(iter.getData()+" ");
+	}
+
+	public static void main(String[] args) {
+		SingleLinkedList sll=new SingleLinkedList();
+		
+		sll.insertLast(10);
+		sll.insertLast(20);
+		sll.insertLast(30);
+		sll.insertLast(40);
+		sll.insertLast(50);
+		sll.insertLast(60);
+		
+		System.out.println("last ->");
+		List.Display(sll.getHead());
+	}
+}

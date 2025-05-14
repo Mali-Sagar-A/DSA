@@ -1,0 +1,222 @@
+package Tree;
+
+import java.util.LinkedList;
+import java.util.Queue;
+public class BinaryTree {
+	
+	private TreeNode root;
+	
+	
+	public BinaryTree()
+	{
+		root = null;
+	}
+	
+	public BinaryTree(TreeNode r)
+	{
+		root = r;
+	}
+	
+	public void setRoot(TreeNode r)
+	{
+		root = r;
+	}
+	
+	public TreeNode getRoot()
+	{
+		return root;
+	}
+	
+	public TreeNode createNode(int d)
+	{
+		return new TreeNode(d);
+	}
+	
+	//*********************************************************************************
+	public void PreOrder() //Wrapper Function
+	{
+		visit_PreOrder(root);
+	}
+	
+	
+	public void visit_PreOrder(TreeNode root)
+	{
+		if(root==null)
+		{
+			return;
+		}
+		
+		System.out.print(root.getData()+" ");
+		visit_PreOrder(root.getLeft());
+		visit_PreOrder(root.getRight());
+		return;
+		
+	}
+	
+	public void InOrder()
+	{
+		visit_InOrder(root);
+	}
+	
+	private void visit_InOrder(TreeNode root)
+	{
+		if(root==null)
+		{
+			return;
+		}
+		
+		visit_InOrder(root.getLeft());
+		System.out.print(root.getData()+" ");
+		visit_InOrder(root.getRight());
+		return;
+		
+	}
+	
+	public void PostOrder()
+	{
+		visit_PostOrder(root);
+	}
+	
+	private void visit_PostOrder(TreeNode root)
+	{
+		if(root==null)
+		{
+			return;
+		}
+		
+		visit_PostOrder(root.getLeft());
+		visit_PostOrder(root.getRight());
+		System.out.print(root.getData()+" ");
+		return;
+	}
+	
+	public void Insert_LevelWise(int d)
+	{
+		TreeNode new_node = new TreeNode(d);
+		
+		if(root == null)
+		{
+			root = new_node;
+			return;
+		}
+		
+		TreeNode iter;
+		Queue<TreeNode> q= new LinkedList<TreeNode>();
+		
+		q.add(root);
+		
+		while(true)
+		{
+			iter = q.remove();
+			
+			if(iter.getLeft()==null)
+			{
+				iter.setLeft(new_node);
+				return;
+			}
+			else
+			{
+				q.add(iter.getLeft());
+			}
+			
+			if(iter.getRight()==null)
+			{
+				iter.setRight(new_node);
+				return;
+			}
+			else
+			{
+				q.add(iter.getRight());
+			}
+		}
+		
+	}
+	
+	public void Display()
+	{
+		if(root==null)
+		{
+			System.out.print("Root Node is Null...");
+			return;
+		}
+		
+		TreeNode iter;
+		
+		Queue<TreeNode> q = new LinkedList<TreeNode>();
+		
+		q.add(root);
+		
+		while(!q.isEmpty())
+		{
+			iter = q.remove();
+			System.out.println(iter.getData()+" ");
+			
+			if(iter.getLeft()!=null)
+			{
+				q.add(iter.getLeft());
+			}
+			if(iter.getRight()!=null)
+			{
+				q.add(iter.getRight());
+			}
+		}
+	}
+	
+	
+	//**************************************************************************
+	
+	public int Find_Height()
+	{
+		if(root==null)
+		{
+			return 0;
+		}
+		TreeNode iter;
+		
+		TreeNode d=new TreeNode(-999);
+		
+		Queue<TreeNode> q=new LinkedList<TreeNode>();
+		
+		int cnt =0;
+		
+		q.add(root);
+		q.add(d);
+		
+		while(!q.isEmpty())
+		{
+			iter=q.remove();
+			if(iter.getData()==-999)
+			{
+				cnt++;
+				q.add(d);
+				iter=q.remove();
+			}
+			if(iter.getLeft()!=null)
+			{
+				q.add(iter.getLeft());
+			}
+			if(iter.getRight()!=null)
+			{
+				q.add(iter.getRight());
+			}
+		}
+		
+		return cnt;
+		
+	}
+	
+	//**************************************************************************
+
+	public boolean isIdentical(TreeNode bt1,TreeNode bt2)
+	{
+		TreeNode iter1;
+		TreeNode iter2;
+		
+		if(bt1.getRoot()==null || bt2.getRoot()==null)
+		{
+			return false;
+		}
+		
+	}
+
+}

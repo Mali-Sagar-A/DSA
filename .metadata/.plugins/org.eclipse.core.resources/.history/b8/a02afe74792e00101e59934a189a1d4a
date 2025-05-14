@@ -1,0 +1,15 @@
+package linkedList;
+
+import stack.Student;
+
+public class Studentnode {
+	private int rollno;
+	private String name;
+	private float mark;
+	private Studentnode head;
+	
+
+	
+	
+
+}

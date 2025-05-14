@@ -1,0 +1,19 @@
+package LinkedListStudent;
+
+public class Student {
+	
+	private int rollno;
+	private String name;
+	private int mark;
+	private Student next;
+	public Student(int rollno, String name, int mark, Student next) {
+		
+		this.rollno = rollno;
+		this.name = name;
+		this.mark = mark;
+		this.next = next;
+	}
+	
+	
+
+}
